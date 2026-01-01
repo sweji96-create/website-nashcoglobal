@@ -1,21 +1,28 @@
 {
   "short_name": "Nashco Global",
   "name": "Nashco Global: Innovative GCC Partner",
+  "description": "Diversified Excellence Across GCC Since 1994. Leading provider of chemicals, automotive, industrial manufacturing, and trading solutions.",
   "icons": [
     {
-      "src": "images/icon-192.png",
+      "src": "Assets/images/icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
-      "src": "images/icon-512.png",
+      "src": "Assets/images/icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "/",
   "background_color": "#0B0E17",
   "theme_color": "#0B0E17",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
 }
