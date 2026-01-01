@@ -1,0 +1,13 @@
+# Robots.txt for Nashco Global
+# https://www.nashcoglobal.com
+
+User-agent: *
+Allow: /
+
+# Disallow backup pages and service worker
+Disallow: /backup_Pages/
+Disallow: /Pages/
+Disallow: /sw.js
+
+# Sitemap location
+Sitemap: https://www.nashcoglobal.com/sitemap.xml
