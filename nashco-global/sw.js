@@ -1,6 +1,7 @@
 
 const CACHE_NAME = 'nashco-global-v2';
 const urlsToCache = [
+  "/",
   "index.html",
   "about.html",
   "zahy-alkhaleej.html",
@@ -13,8 +14,6 @@ const urlsToCache = [
   "Assets/css/styles.css",
   "Assets/js/main.js",
   "Assets/images/logo-nashco.png",
-  "Assets/images/icon-192.png",
-  "Assets/images/icon-512.png",
   "Assets/images/home-page-dubai.jpeg",
   "Assets/images/manufacturing-factory-inside-page.jpg",
   "Assets/images/contact-hero.jpg"
