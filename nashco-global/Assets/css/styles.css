@@ -217,6 +217,14 @@
 html {
     box-sizing: border-box;
     font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 *,
@@ -513,65 +521,63 @@ body {
 }
 
 .footer-contact-info {
-    font-nizeze0.82r0m82rem;
-    in-ehheeghi: 1.1;
-    1olor: #fff !importa1;
-    color: #fff !im0.08m: 0.08rem;
-
+    font-size: 0.82rem;
+    line-height: 1.1;
+    color: #fff !important;
+    margin-bottom: 0.08rem;
     font-weight: 400;
+}
 
-    .footer-contact-info:last-child {
-        margin-bottom: 0;
-    }
+.footer-contact-info:last-child {
+    margin-bottom: 0;
+}
 
-    :lt-child gbottom: 0 .footer-contact-icon {
-        width: 18px;
-        height: 18px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 4px;
-    }
+.footer-contact-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+}
 
-    4 .powered-by-nashco {
-        font-size: 0.82rem;
-        color: #fff;
-        margin-bottom: 0.1rem;
-        font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-        font-weight: 400;
-        text-align: center;
-    }
+.powered-by-nashco {
+    font-size: 0.82rem;
+    color: #fff;
+    margin-bottom: 0.1rem;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
 
-    .footer-copyright p {
-        font-size: 0.82rem;
-        color: #fff;
-        height: 80px;
-        object-fit: contain;
-        margin: 0 auto 0.08rem auto;
-        display: block;
-    }
+.footer-copyright p {
+    font-size: 0.82rem;
+    color: #fff;
+    margin: 0 auto 0.08rem auto;
+    display: block;
+}
 
-    /* Stock Gallery (if used) */
-    .stock-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1.2rem8 margin-8op: 1.5rem;
-    }
+/* Stock Gallery (if used) */
+.stock-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
 
-    80px;
-    objec-fit: cntain: 0 au auto display: block;
+.stock-gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-    .stock-gallery img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .stock-gallery img:hover {
-        transform: scale(1.04);
-        box-shadow: 0 14px 40px var(--shadow-accent);
-    }
+.stock-gallery img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 14px 40px var(--shadow-accent);
+}
 
     /* Typography */
     h1,
@@ -667,6 +673,10 @@ body {
         .tiles-grid {
             grid-template-columns: 1fr 1fr;
         }
+        
+        .stock-gallery {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
     }
 
     @media (max-width: 768px) {
@@ -690,10 +700,27 @@ body {
 
         .hero-section {
             padding: 40px 0 20px 0;
+            min-height: 50vh;
         }
 
         .services {
             padding: 40px 0 20px 0;
+        }
+        
+        .stock-gallery {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+        
+        .service-card {
+            min-height: 200px;
+            padding: 1.5rem 1rem;
+        }
+        
+        .logo-nashco-navbar-giant {
+            max-width: 200px !important;
+            width: 180px !important;
+            height: 80px !important;
         }
     }
 
@@ -709,6 +736,50 @@ body {
         .main-footer {
             font-size: 0.85rem;
         }
+        
+        .hero h1, .hero-section h1 {
+            font-size: clamp(1.3rem, 5vw, 2rem);
+        }
+        
+        .hero p, .hero-section p {
+            font-size: 0.95rem;
+        }
+        
+        .cta-btn {
+            padding: 0.6rem 1.8rem;
+            font-size: 1rem;
+        }
+        
+        .stock-gallery {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.8rem;
+        }
+        
+        .stock-gallery img {
+            height: 100px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+        }
+        
+        .section-heading {
+            font-size: 2rem;
+        }
+        
+        .logo-nashco-navbar-giant {
+            max-width: 160px !important;
+            width: 140px !important;
+            height: 60px !important;
+        }
     }
 
     /* Accessibility */
@@ -718,37 +789,77 @@ body {
         outline: 2px solid var(--accent);
         outline-offset: 2px;
     }
-
-    /* Nashco logo in footer: 4x larger than previous (now 40px) */
-    .zahy-logo-img-footer {
-        /* Acc ssmb:li4yx*/
-        a: idcus,
-            buht0;
-        : focu,
-            .ct-bt:focu heigoutlaueo;
-        solidvar(--accent) margnutli-eoofftmt: 2px;
+    
+    /* Skip to main content link */
+    .skip-to-main {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: var(--accent);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        z-index: 100;
+    }
+    
+    .skip-to-main:focus {
+        top: 0;
+    }
+    
+    /* Focus visible for keyboard navigation */
+    *:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+        body {
+            background: #000;
+            color: #fff;
+        }
+        
+        .card, .service-card {
+            border: 2px solid #fff;
+        }
+    }
+    
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+        
+        .logo-nashco-3d {
+            animation: none;
+        }
+        
+        .nashco-globe-3d {
+            animation: none;
+        }
     }
 
-    /*Nashcologoinoer 4xlargrthpevous (now 40px) */
-    .zhy-ogo-imgfoot {
-        max-width: 40px;
-        with4px
-        /* height:Fauto;
-ootemargin-b:ttcmmp0.08remM
-}
-ontserrat and Open Sans for contact info */
-        /*eFooter:rcompare-Moncsorrat cndoOpmn Sans oor contacn info */
-    }
-
-    o.mntserrat ter-contafamtlynf'Montsereat',
-    'Segon UI',
-    rial,
-    san-erf;
+/* Nashco logo in footer */
+.zahy-logo-img-footer {
+    max-width: 180px;
+    width: 140px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.08rem;
 }
 
-.oter-onac-io.penfn-famiy'OenSan',
-Ail,
-sasrif
+/* Footer contact info - Montserrat and Open Sans */
+.footer-contact-info.montserrat {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.footer-contact-info.opensans {
+    font-family: 'Open Sans', Arial, sans-serif;
+}
 
 /* Copperplate Gothic Light, font size 15px, all caps for headings */
 .copperplate-heading {
@@ -784,4 +895,60 @@ sasrif
     font-weight: 400;
     text-align: center;
     margin-top: 0.1em;
+}
+
+/* Utility Classes */
+.text-accent {
+    color: var(--accent) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent) !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Performance optimizations */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-fluid {
+    display: block;
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .main-footer,
+    .cta-btn {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
 }
