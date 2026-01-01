@@ -76,10 +76,16 @@
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                        toggle: false
-                    });
-                    bsCollapse.hide();
+                    // Check if Bootstrap is available
+                    if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                    } else {
+                        // Fallback: manually toggle the class
+                        navbarCollapse.classList.remove('show');
+                    }
                 }
             });
         });
@@ -199,7 +205,7 @@
     function initServiceWorker() {
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('./sw.js')
                     .then(registration => {
                         console.log('ServiceWorker registered:', registration.scope);
                     })

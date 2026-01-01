@@ -28,8 +28,6 @@ self.addEventListener('install', event => {
       });
     })
   );
-  // Force the waiting service worker to become the active service worker
-  self.skipWaiting();
 });
 self.addEventListener('fetch', event => {
   // Skip cross-origin requests and chrome extension requests
