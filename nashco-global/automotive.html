@@ -58,13 +58,14 @@
           </video>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="zahy-alkhaleej.html">Zahy Al Khaleej LLC</a></li>
-        <li><a href="automotive.html" class="active">Automotive</a></li>
-        <li><a href="manufacturing.html">Manufacturing</a></li>
-        <li><a href="trading.html">Trading</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+        <li><a href="zahy-alkhaleej.html" data-i18n="nav.zahy">Zahy Al Khaleej LLC</a></li>
+        <li><a href="automotive.html" class="active" data-i18n="nav.automotive">Automotive</a></li>
+        <li><a href="manufacturing.html" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="trading.html" data-i18n="nav.trading">Trading</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        <li><button class="btn lang-toggle-btn" id="langToggle"><span class="me-1">🌐</span> العربية</button></li>
       </ul>
     </nav>
   </header>
@@ -161,20 +162,21 @@
   <!-- Main JS (Bilingual Support) -->
   <script src="Assets/js/main.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS (Bilingual Support) -->
+  <script src="Assets/js/main.js"></script>
+  <!-- GSAP and ScrollTrigger -->
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
   <script>
-    AOS.init({ once: true, duration: 900, offset: 60 });
     gsap.from('.hero-section h1', { opacity: 0, y: 60, duration: 1, delay: 0.2 });
     gsap.from('.hero-section p', { opacity: 0, y: 40, duration: 1, delay: 0.5 });
   </script>
-</body>
-</html>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
 </body>
 </html>
 
